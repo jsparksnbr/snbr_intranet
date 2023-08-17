@@ -1,0 +1,32 @@
+{
+  "name": "snbr",
+  "version": "1.0.0",
+  "description": "Sinaburo Intranet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "jspark",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.2",
+    "express-generator": "^4.16.1",
+    "express-session": "^1.17.3",
+    "express-session-mariadb-store": "^0.1.4",
+    "mariadb": "^3.2.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2",
+    "winston": "^3.10.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

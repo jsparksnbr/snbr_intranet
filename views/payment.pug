@@ -1,0 +1,368 @@
+
+doctype html
+html(lang="ja")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        <!-- Bootstrap CSS -->
+        link(rel="stylesheet", href="/css/payment.css")
+        title 給料明細書
+    body 
+        table#sheet0.sheet0.gridlines(border="0" cellpadding="0" cellspacing="0")
+            col.col0
+            col.col1
+            col.col2
+            col.col3
+            col.col4
+            col.col5
+            col.col6
+            col.col7
+            col.col8
+            col.col9
+            col.col10
+            col.col11
+            col.col12
+            col.col13
+            col.col14
+            tbody
+                tr.row2
+                    td.column0.style1.null
+                    td.column1.style3.null
+                    td.column2.style4.null
+                    td.column3.style4.null
+                    td.column4.style4.null
+                    td.column5.style4.null
+                    td.column6.style4.null
+                    td.column7.style4.null
+                    td.column8.style4.null
+                    td.column9.style4.null
+                    td.column10.style4.null
+                    td.column11.style4.null
+                    td.column12.style4.null
+                    td.column13.style5.null
+                    td.column14.style1.null
+                tr.row3
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style18.f(colspan="2") #{wareki}分
+                    td.column4.style1.null
+                    td.column5.style1.null
+                    td.column6.style1.null
+                    td.column7.style1.null
+                    td.column8.style1.null
+                    td.column9.style1.null
+                    td.column10.style1.null
+                        div(style="position: relative;")
+                            img(style="position: absolute; z-index: 1; left: 0px; top: 15px; width: 77px; height: 80px;" src="/images/inkan.png" border="0")
+                    td.column11.style1.null
+                    td.column12.style1.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row4
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style18.null
+                    td.column3.style18.null
+                    td.column4.style18.null
+                    td.column5.style34.s(colspan="3") 給　与　明　細　書
+                    td.column8.style18.null
+                    td.column9.style18.s 支給
+                    td.column10.style18.null
+                    td.column11.style18.null
+                    td.column12.style22.s 受領印
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row5
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style21.s 社員番号
+                    td.column3.style21.null #{pay.employee_no}
+                    td.column4.style18.null
+                    td.column5.style18.null
+                    td.column6.style18.null
+                    td.column7.style18.null
+                    td.column8.style18.null
+                    td.column9.style18.null
+                    td.column10.style18.null
+                    td.column11.style18.null
+                    td.column12.style25.null(rowspan="2")
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row6
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style21.s 所　属
+                    td.column3.style20.null 経営支援
+                    td.column4.style21.s 氏　名
+                    td.column5.style20.null #{name}
+                    td.column6.style21.s 殿
+                    td.column7.style18.null
+                    td.column8.style8.s(colspan="3") 株式会社　シナブロ
+                    td.column11.style18.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row7
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style18.null
+                    td.column3.style18.null
+                    td.column4.style18.null
+                    td.column5.style18.null
+                    td.column6.style18.null
+                    td.column7.style18.null
+                    td.column8.style18.null
+                    td.column9.style18.null
+                    td.column10.style18.null
+                    td.column11.style18.null
+                    td.column12.style9.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row8
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style23.null
+                    td.column3.style22.s 基本給
+                    td.column4.style22.s 役職手当
+                    td.column5.style22.s 住宅手当
+                    td.column6.style22.s 職能給
+                    td.column7.style22.s 厚生手当
+                    td.column8.style22.s 特別手当
+                    td.column9.style22.s
+                    td.column10.style22.s
+                    td.column11.style18.null
+                    td.column12.style10.s 支給額合計
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row9
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style11.s 支
+                    td.column3.style22.null #{pay.base_pay}
+                    td.column4.style22.null #{pay.position_pay}
+                    td.column5.style22.null #{pay.house_pay}
+                    td.column6.style22.null #{pay.function_pay}
+                    td.column7.style22.null #{pay.benefits_pay}
+                    td.column8.style22.null #{pay.special_pay}
+                    td.column9.style22.null
+                    td.column10.style22.null
+                    td.column11.style18.null
+                    td.column12.style25.null(rowspan="2")
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row10
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style11.s 給
+                    td.column3.style22.s
+                    td.column4.style22.s
+                    td.column5.style22.s 残業手当
+                    td.column6.style22.s 休出手当
+                    td.column7.style22.s 遅刻早退
+                    td.column8.style22.s 欠勤控除
+                    td.column9.style22.s 交通費
+                    td.column10.style22.s
+                    td.column11.style18.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row11
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style24.null
+                    td.column3.style22.null
+                    td.column4.style22.null
+                    td.column5.style22.null #{pay.overtime_pay}
+                    td.column6.style22.null
+                    td.column7.style22.null
+                    td.column8.style22.null
+                    td.column9.style22.null #{pay.transportation_costs}
+                    td.column10.style22.null
+                    td.column11.style18.null
+                    td.column12.style12.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row12
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style23.null
+                    td.column3.style22.s 寮使用料
+                    td.column4.style22.s 健康保険
+                    td.column5.style22.s 介護保険
+                    td.column6.style22.s 厚生年金
+                    td.column7.style22.s 互助会費
+                    td.column8.style22.null
+                    td.column9.style22.s 住民税
+                    td.column10.style22.s 旅費積立
+                    td.column11.style18.null
+                    td.column12.style22.s 控除合計
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row13
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style11.s 控
+                    td.column3.style22.null #{pay.dormitory_pee}
+                    td.column4.style22.null #{pay.health_annuity}
+                    td.column5.style22.null
+                    td.column6.style22.null #{pay.welfare_annuity}
+                    td.column7.style22.null #{pay.friendly_society_pee}
+                    td.column8.style22.null
+                    td.column9.style22.null #{pay.residence_tax}
+                    td.column10.style22.null #{pay.travelling_expenses}
+                    td.column11.style18.null
+                    td.column12.style25.null(rowspan="2")
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row14
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style11.s 除
+                    td.column3.style22.s 天引預金
+                    td.column4.style22.s 立替金
+                    td.column5.style22.s 指定送金
+                    td.column6.style22.s その他控除
+                    td.column7.style22.s
+                    td.column8.style22.null
+                    td.column9.style22.null
+                    td.column10.style22.s 所得税
+                    td.column11.style18.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row15
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style24.null
+                    td.column3.style22.null
+                    td.column4.style22.null
+                    td.column5.style22.null
+                    td.column6.style22.null
+                    td.column7.style22.null
+                    td.column8.style22.null
+                    td.column9.style22.null
+                    td.column10.style22.null
+                    td.column11.style18.null
+                    td.column12.style12.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row16
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style13.null
+                    td.column3.style12.null
+                    td.column4.style12.null
+                    td.column5.style12.null
+                    td.column6.style12.null
+                    td.column7.style12.null
+                    td.column8.style12.null
+                    td.column9.style12.null
+                    td.column10.style12.null
+                    td.column11.style12.null
+                    td.column12.style12.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row17
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style23.null
+                    td.column3.style22.s 普通残業
+                    td.column4.style22.s 深夜残業
+                    td.column5.style22.s 休出
+                    td.column6.style22.s 遅刻・早退
+                    td.column7.style22.s 欠勤
+                    td.column8.style22.s 有給休暇
+                    td.column9.style22.s 振替処理
+                    td.column10.style22.s 有給残
+                    td.column11.style18.null
+                    td.column12.style12.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row18
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style11.s 勤
+                    td.column3.style22.null
+                    td.column4.style22.null
+                    td.column5.style22.null
+                    td.column6.style22.null
+                    td.column7.style22.null
+                    td.column8.style22.null
+                    td.column9.style22.null
+                    td.column10.style22.null
+                    td.column11.style18.null
+                    td.column12.style10.s 差引支給額
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row19
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style11.s 怠
+                    td.column3.style22.s 振替残
+                    td.column4.style22.null
+                    td.column5.style22.null
+                    td.column6.style22.null
+                    td.column7.style22.null
+                    td.column8.style22.null
+                    td.column9.style10.s
+                    td.column10.style10.s
+                    td.column11.style18.null
+                    td.column12.style25.null(rowspan="2")
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row20
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style24.null
+                    td.column3.style14.null
+                    td.column4.style14.null
+                    td.column5.style14.null
+                    td.column6.style14.null
+                    td.column7.style14.null
+                    td.column8.style14.null
+                    td.column9.style14.null
+                    td.column10.style14.null
+                    td.column11.style18.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row21
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style18.null
+                    td.column3.style18.null
+                    td.column4.style18.null
+                    td.column5.style18.null
+                    td.column6.style18.null
+                    td.column7.style18.null
+                    td.column8.style18.null
+                    td.column9.style18.null
+                    td.column10.style18.null
+                    td.column11.style18.null
+                    td.column12.style18.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row22
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column2.style26.s.style27(rowspan="2") Ｍｅｓｓａｇｅ
+                    td.column3.style28.null.style33(colspan="10" rowspan="2")
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row23
+                    td.column0.style1.null
+                    td.column1.style6.null
+                    td.column13.style7.null
+                    td.column14.style1.null
+                tr.row24
+                    td.column0.style1.null
+                    td.column1.style15.null
+                    td.column2.style16.null
+                    td.column3.style16.null
+                    td.column4.style16.null
+                    td.column5.style16.null
+                    td.column6.style16.null
+                    td.column7.style16.null
+                    td.column8.style16.null
+                    td.column9.style16.null
+                    td.column10.style16.null
+                    td.column11.style16.null
+                    td.column12.style16.null
+                    td.column13.style17.null
+                    td.column14.style1.null

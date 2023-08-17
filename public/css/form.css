@@ -1,0 +1,57 @@
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+
+  min-height: 100vh;
+  margin-left: 0.78740157480315in;
+  margin-right: 0.78740157480315in;
+  margin-top: 0.98425196850394in;
+  margin-bottom: 0.98425196850394in;
+
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#92b5db),
+    to(#1d466c)
+  );
+  background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+  background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+  background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+  background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+}
+
+.input-form {
+  max-width: 680px;
+
+  margin-top: 80px;
+  padding: 32px;
+
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.noime {
+  ime-mode: disabled; /* 半角英数固定 */
+}
+.imeoff {
+  ime-mode: inactive; /* 移動してきた時に半角英数になる */
+}
+.imeon {
+  ime-mode: active; /* 日本語入力モードに切り替え */
+}
+.imeauto {
+  ime-mode: auto; /* 何も変更しない */
+}
+
+@page {
+  margin-left: 0.78740157480315in;
+  margin-right: 0.78740157480315in;
+  margin-top: 0.98425196850394in;
+  margin-bottom: 0.98425196850394in;
+}

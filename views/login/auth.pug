@@ -1,0 +1,18 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title login
+        style(type="text/css").
+            #google_login_btn {
+                background: url("/images/btn_google_signin_dark_normal_web@2x.png");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                cursor: pointer;
+                width: 200px;
+                height: 50px;
+            }
+    body
+        form(method="GET" action="/auth/google")
+            input#google_login_btn(type="submit" name="")

@@ -1,0 +1,21 @@
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        <!-- Bootstrap CSS -->
+        link(rel="stylesheet", href="/css/menu.css")
+        link(rel="stylesheet", href="/css/form.css")
+        title Top
+    body
+        h1 株式会社シナブロ　イントラネット
+
+        nav
+            a(href="#") Home
+            a(href="#") メール
+            if positon == '7' || position == '9'
+                a(href="/insPay") 給料入力
+            else 
+                a(href="#") 交通費請求
+            a(href="/viewPay") 給料明細
+            a(href="/modInfo") Profile
+            div.animation.start-home

@@ -1,0 +1,30 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title ログイン
+        link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet")
+    body
+        #app.mt-4
+            div.row.justify-content-center
+                div.col-md-8
+                    div.card
+                        div.card-header ログイン
+                        div.card-body
+                            form(method="POST" action="/login")
+                                div.form-group.row
+                                    label.col-md-4.col-form-label.text-md-right(for="email") メールアドレス
+                                    div.col-md-6
+                                        input#email.form-control(type="text" name="email" autofocus) 
+                                        div.alert.alert-danger 
+                                        
+            
+                                div.form-group.row
+                                    label.col-md-4.col-form-label.text-md-right(for="password") パスワード
+                                    div.col-md-6
+                                        input#password.form-control(type="password" name="password")
+                                div.form-group.row.mb-0
+                                    div.col-md-8.offset-md-4
+                                        button.btn.btn-primary(type="submit") ログイン
+                                        

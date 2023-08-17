@@ -1,0 +1,119 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        <!-- Bootstrap CSS -->
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.2.1.js")
+        script(src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js")
+        script(src='/javascripts/form.js')
+        link(rel="stylesheet", href="/css/menu.css")
+        link(rel="stylesheet", href="/css/form.css")
+        title 給料入力
+    body
+        h1 給料入力
+        nav
+            a(href="/") Home
+            a(href="https://www.gmail.com") メール
+            a(href="/insPay") 給料入力
+            a(href="/viewPay") 給料明細
+            a(href="/modInfo") Profile
+            div.animation.start-third
+        .container
+            .input-form-background.row
+                .input-form.col-md-12.mx-auto 
+                    form.validation-form(method='POST' action='/setPayment' novalidate)
+                        .row
+                            .col-md-6.mb-3
+                                label(for='employee_no') 社員番号
+                                input#employee_no.form-control.noime(name="employee_no" type="text" placeholder="SN00000" value=emp_no readonly)
+                                .invalid-feedback 社員番号を正しく入力してください。
+                            .col-md-6.mb-3        
+                                label(for='name') 名前
+                                input#email.form-control(name="name" type="text" value=name readonly)
+                        .row
+                            .col-md-6.mb-3
+                                label(for='inDate') 対象年月
+                                input#inDate.form-control(name="inDate" type="text" value=inDate readonly)
+                            .col-md-6.mb-3
+                                label(for='email') E-Mail
+                                input#email.form-control(name="email" type="text" value=email readonly)
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='base_pay') 基本給
+                                input#base_pay.form-control(name="base_pay" type="text" value=pay.base_pay required)
+                                .invalid-feedback 基本給を選択してください。
+                            .col-md-6.mb-3
+                                label(for='special_pay') 特別手当
+                                input#special_pay.form-control(name="special_pay" type="text" value=pay.special_pay required)
+                                .invalid-feedback 特別手当を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='position_pay') 役職手当
+                                input#position_pay.form-control(name="position_pay" type="text" value=pay.position_pay required)
+                                .invalid-feedback 役職手当を選択してください。
+                            .col-md-6.mb-3
+                                label(for='house_pay') 住宅手当
+                                input#house_pay.form-control(name="house_pay" type="text" value=pay.house_pay required)
+                                .invalid-feedback 住宅手当を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='function_pay') 職能給
+                                input#function_pay.form-control(name="function_pay" type="text" value=pay.function_pay required)
+                                .invalid-feedback 職能給を選択してください。
+                            .col-md-6.mb-3
+                                label(for='overtime_pay') 残業手当
+                                input#overtime_pay.form-control(name="overtime_pay" type="text" value=pay.overtime_pay required)
+                                .invalid-feedback 残業手当を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='benefits_pay') 厚生手当
+                                input#benefits_pay.form-control(name="benefits_pay" type="text" value=pay.benefits_pay required)
+                                .invalid-feedback 厚生手当を選択してください。
+                            .col-md-6.mb-3
+                                label(for='dependent') 扶養家族
+                                input#dependent.form-control(name="dependent" type="text" value=pay.dependent required)
+                                .invalid-feedback 扶養家族を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='transportation_costs') 交通費
+                                input#transportation_costs.form-control(name="transportation_costs" type="text" value=pay.transportation_costs required)
+                                .invalid-feedback 交通費を選択してください。
+                            .col-md-6.mb-3
+                                label(for='health_annuity') 健康保険
+                                input#health_annuity.form-control(name="health_annuity" type="text" value=pay.health_annuity required)
+                                .invalid-feedback 健康保険を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='welfare_annuity') 厚生年金
+                                input#welfare_annuity.form-control(name="welfare_annuity" type="text" value=pay.welfare_annuity required)
+                                .invalid-feedback 厚生年金を選択してください。
+                            .col-md-6.mb-3
+                                label(for='friendly_society_pee') 互助会費
+                                input#friendly_society_pee.form-control(name="friendly_society_pee" type="text" value=pay.friendly_society_pee required)
+                                .invalid-feedback 互助会費を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='travelling_expenses') 旅費積立
+                                input#travelling_expenses.form-control(name="travelling_expenses" type="text" value=pay.travelling_expenses required)
+                                .invalid-feedback 旅費積立を選択してください。
+                            .col-md-6.mb-3
+                                label(for='income_tax') 所得税
+                                input#income_tax.form-control(name="income_tax" type="text" value=pay.income_tax required)
+                                .invalid-feedback 所得税を正しく入力してください。
+                        .row 
+                            .col-md-6.mb-3
+                                label(for='residence_tax') 住民税
+                                input#residence_tax.form-control(name="residence_tax" type="text" value=pay.residence_tax required)
+                                .invalid-feedback 住民税を選択してください。
+                            .col-md-6.mb-3
+                                label(for='dormitory_pee') 寮使用料
+                                input#dormitory_pee.form-control(name="dormitory_pee" type="text" value=pay.dormitory_pee required)
+                                .invalid-feedback 寮使用料を正しく入力してください。
+                        hr.mb-4 
+                        input#initFlg(name="initFlg" type="hidden" value=initFlg)
+                        if initFlg == 1
+                            button.btn.btn-primary.btn-lg.btn-block(type="submit") 入力
+                        else 
+                            button.btn.btn-primary.btn-lg.btn-block(type="submit") 承認
