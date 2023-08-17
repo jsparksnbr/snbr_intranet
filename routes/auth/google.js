@@ -4,6 +4,14 @@ const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 const app = express();
 
+//CallBack URL定義
+const callbakURL =
+  "http://" +
+  process.env.HOST_NAME +
+  ":" +
+  process.env.SERVER_PORT +
+  "/auth/google/callback";
+
 // 環境変数読み込み
 require("dotenv").config();
 // Google ログインキー
@@ -33,7 +41,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/callback",
+      callbackURL: callbakURL,
       passReqToCallback: true,
     },
     (request, accessToken, refreshToken, profile, done) => {
