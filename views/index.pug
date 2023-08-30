@@ -16,6 +16,9 @@ html
                 a(href="/insPay") 給料入力
             else 
                 a(href="#") 交通費請求
-            a(href="/viewPay") 給料明細
+            if positon == '7' || position == '9'
+                a(href="/viewPayAll") 給料明細
+            else 
+                a(href="/viewPay") 給料明細
             a(href="/modInfo") Profile
             div.animation.start-home

@@ -68,7 +68,22 @@ async function getEmployeeByEmail(email) {
   }
 }
 
+async function getAllUserName() {
+  //DBに接続する
+  var conn = await pool.getConnection();
+  try {
+    var employee = await conn.query("SELECT employee_no, lastname_hanja, firstname_hanja FROM employee");
+    conn.close();
+    return employee;
+  } catch (error) {
+    conn.close();
+    logger.error(error.stack);
+    throw new Error();
+  }
+}
+
 module.exports.getPosition = getPosition;
 module.exports.getEmployeeNo = getEmployeeNo;
 module.exports.getEmployee = getEmployee;
 module.exports.getEmployeeByEmail = getEmployeeByEmail;
+module.exports.getAllUserName = getAllUserName;

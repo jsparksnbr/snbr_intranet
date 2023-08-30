@@ -10,9 +10,9 @@ html(lang="ja")
         script(src="https://code.jquery.com/jquery-3.2.1.js")
         script(src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js")
         script(src='/javascripts/form.js')
-        title 給料入力
+        title 給料明細書
     body
-        h1 給料入力 
+        h1 給料明細書 
         nav
             a(href="/") Home
             a(href="https://www.gmail.com") メール
@@ -25,16 +25,16 @@ html(lang="ja")
             else 
                 a(href="/viewPay") 給料明細
             a(href="/modInfo") Profile
-            div.animation.start-third
+            div.animation.start-fourth
         .container
             .input-form-background.row
                 .input-form.col-md-12.mx-auto 
-                    form.validation-form(method='GET' action='/setPayment' novalidate)
+                    form.validation-form(method='POST' action='/payPrint' onsubmit="return popup_window(this)" novalidate)
                         .row
                             .col-md-6.mb-3
-                                label(for='inDate') 入力する年月
-                                input#birthday.form-control(name="inDate" type="month" required)
-                                .invalid-feedback 給料を入力する年月を正しく入力してください。
+                                label(for='inDate') 明細を表示する年月
+                                input#inDate.form-control(name="inDate" type="month" value=inDate required)
+                                .invalid-feedback 明細を表示する年月を正しく入力してください。
                             .col-md-6.mb-3
                                 label(for='employee_no') 社員
                                 select#bank.custom-select.d-block(name="employee_no" required)
@@ -42,4 +42,5 @@ html(lang="ja")
                                         option(value=row.employee_no) #{row.lastname_hanja} #{row.firstname_hanja}
                                 .invalid-feedback 社員名を選択してください。
                         hr.mb-4 
-                        button.btn.btn-primary.btn-lg.btn-block(type="submit") 入力 
+                        button.btn.btn-primary.btn-lg.btn-block(type="submit") 表示
+

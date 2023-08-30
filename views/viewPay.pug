@@ -20,7 +20,10 @@ html(lang="ja")
                 a(href="/insPay") 給料入力
             else 
                 a.test(href="#") 交通費請求
-            a(href="/viewPay") 給料明細
+            if positon == '7' || position == '9'
+                a(href="/viewPayAll") 給料明細
+            else 
+                a(href="/viewPay") 給料明細
             a(href="/modInfo") Profile
             div.animation.start-fourth
         .container
@@ -30,7 +33,7 @@ html(lang="ja")
                         .row
                             .col-md-6.mb-3
                                 label(for='inDate') 明細を表示する年月
-                                input#inDate.form-control(name="inDate" type="month" required)
+                                input#inDate.form-control(name="inDate" type="month" value=inDate required)
                                 .invalid-feedback 明細を表示する年月を正しく入力してください。
                             .col-md-6.mb-3
                                 label(for='btn') 

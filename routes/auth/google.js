@@ -4,6 +4,12 @@ const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 const app = express();
 
+// 環境変数読み込み
+require("dotenv").config();
+// Google ログインキー
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+
 //CallBack URL定義
 const callbakURL =
   "http://" +
@@ -11,13 +17,7 @@ const callbakURL =
   ":" +
   process.env.SERVER_PORT +
   "/auth/google/callback";
-
-// 環境変数読み込み
-require("dotenv").config();
-// Google ログインキー
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-
+  
 //passort初期化及びセッション連携
 app.use(passport.initialize());
 app.use(passport.session());

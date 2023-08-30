@@ -137,16 +137,16 @@ html(lang="ja")
                     td.column0.style1.null
                     td.column1.style6.null
                     td.column2.style11.s 支
-                    td.column3.style22.null #{pay.base_pay}
-                    td.column4.style22.null #{pay.position_pay}
-                    td.column5.style22.null #{pay.house_pay}
-                    td.column6.style22.null #{pay.function_pay}
-                    td.column7.style22.null #{pay.benefits_pay}
-                    td.column8.style22.null #{pay.special_pay}
+                    td.column3.style22.null #{pay.base_pay.toLocaleString()}
+                    td.column4.style22.null #{pay.position_pay.toLocaleString()}
+                    td.column5.style22.null #{pay.house_pay.toLocaleString()}
+                    td.column6.style22.null #{pay.function_pay.toLocaleString()}
+                    td.column7.style22.null #{pay.benefits_pay.toLocaleString()}
+                    td.column8.style22.null #{pay.special_pay.toLocaleString()}
                     td.column9.style22.null
                     td.column10.style22.null
                     td.column11.style18.null
-                    td.column12.style25.null(rowspan="2")
+                    td.column12.style25.null(rowspan="2") #{tot_pay.toLocaleString()}
                     td.column13.style7.null
                     td.column14.style1.null
                 tr.row10
@@ -170,11 +170,14 @@ html(lang="ja")
                     td.column2.style24.null
                     td.column3.style22.null
                     td.column4.style22.null
-                    td.column5.style22.null #{pay.overtime_pay}
+                    td.column5.style22.null #{pay.overtime_pay.toLocaleString()}
                     td.column6.style22.null
                     td.column7.style22.null
                     td.column8.style22.null
-                    td.column9.style22.null #{pay.transportation_costs}
+                    if pay.transportation_costs != undefined
+                        td.column9.style22.null #{pay.transportation_costs.toLocaleString()}
+                    else 
+                        td.column9.style22.null #{pay.transportation_costs}
                     td.column10.style22.null
                     td.column11.style18.null
                     td.column12.style12.null
@@ -200,16 +203,22 @@ html(lang="ja")
                     td.column0.style1.null
                     td.column1.style6.null
                     td.column2.style11.s 控
-                    td.column3.style22.null #{pay.dormitory_pee}
-                    td.column4.style22.null #{pay.health_annuity}
+                    if pay.dormitory_pee != undefined
+                        td.column3.style22.null #{pay.dormitory_pee.toLocaleString()}
+                    else 
+                        td.column3.style22.null #{pay.dormitory_pee}
+                    td.column4.style22.null #{pay.health_annuity.toLocaleString()}
                     td.column5.style22.null
-                    td.column6.style22.null #{pay.welfare_annuity}
-                    td.column7.style22.null #{pay.friendly_society_pee}
+                    td.column6.style22.null #{pay.welfare_annuity.toLocaleString()}
+                    td.column7.style22.null #{pay.friendly_society_pee.toLocaleString()}
                     td.column8.style22.null
-                    td.column9.style22.null #{pay.residence_tax}
-                    td.column10.style22.null #{pay.travelling_expenses}
+                    if pay.residence_tax != undefined
+                        td.column9.style22.null #{pay.residence_tax.toLocaleString()}
+                    else 
+                        td.column9.style22.null #{pay.residence_tax}
+                    td.column10.style22.null #{pay.travelling_expenses.toLocaleString()}
                     td.column11.style18.null
-                    td.column12.style25.null(rowspan="2")
+                    td.column12.style25.null(rowspan="2") #{deduction.toLocaleString()}
                     td.column13.style7.null
                     td.column14.style1.null
                 tr.row14
@@ -238,8 +247,11 @@ html(lang="ja")
                     td.column7.style22.null
                     td.column8.style22.null
                     td.column9.style22.null
-                    td.column10.style22.null
-                    td.column11.style18.null
+                    if pay.income_tax != undefined
+                        td.column10.style22.null #{pay.income_tax.toLocaleString()}
+                    else 
+                        td.column10.style22.null #{pay.income_tax}
+                    td.column11.style18.null 
                     td.column12.style12.null
                     td.column13.style7.null
                     td.column14.style1.null
@@ -304,7 +316,7 @@ html(lang="ja")
                     td.column9.style10.s
                     td.column10.style10.s
                     td.column11.style18.null
-                    td.column12.style25.null(rowspan="2")
+                    td.column12.style25.null(rowspan="2") #{result_pay.toLocaleString()}
                     td.column13.style7.null
                     td.column14.style1.null
                 tr.row20
@@ -342,7 +354,7 @@ html(lang="ja")
                     td.column0.style1.null
                     td.column1.style6.null
                     td.column2.style26.s.style27(rowspan="2") Ｍｅｓｓａｇｅ
-                    td.column3.style28.null.style33(colspan="10" rowspan="2")
+                    td.column3.style28.null.style33(colspan="10" rowspan="2") #{full_bank_name}
                     td.column13.style7.null
                     td.column14.style1.null
                 tr.row23

@@ -8,6 +8,7 @@ const insInfo = require("./routes/insInfo");
 const modInfo = require("./routes/modInfo");
 const insPay = require("./routes/insPay");
 const viewPay = require("./routes/viewPay");
+const viewPayAll = require("./routes/viewPayAll");
 const payPrint = require("./routes/payPrint");
 const setPayment = require("./routes/setPayment");
 
@@ -82,6 +83,8 @@ app.use("/modInfo", modInfo);
 app.use("/insPay", insPay);
 //viewPayに分岐
 app.use("/viewPay", viewPay);
+//viewPayAllに分岐
+app.use("/viewPayAll", viewPayAll);
 //payPrintに分岐
 app.use("/payPrint", payPrint);
 //setPaymentに分岐

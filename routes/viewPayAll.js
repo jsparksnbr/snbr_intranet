@@ -8,6 +8,7 @@ router.get("/", async (req, res, next) => {
     var email = req.session.passport.user;
     try {
       var position = await user.getPosition(email);
+      var employees = await user.getAllUserName();
     } catch (error) {
       error.errCode = "500";
       next(error);
@@ -16,8 +17,8 @@ router.get("/", async (req, res, next) => {
 
     var now = new Date();
     var inDate = now.getFullYear() + "-" + (now.getMonth() + 1).toString().padStart( 2, '0');
-
-    res.render("viewPay", { position: position, inDate: inDate });
+    console.log(inDate);
+    res.render("viewPayAll", { position: position, emp: employees, inDate: inDate });
   } else {
     res.redirect("/auth/google");
   }
